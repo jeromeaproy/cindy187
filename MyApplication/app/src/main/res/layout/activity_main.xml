@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.example.myapplication.app.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+    <TextView
+        android:text="nom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="0.30"
+        />
+
+    <EditText
+        android:text=""
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="0.70"
+
+
+        android:id="@+id/tvNom"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+    <TextView
+        android:text="prénom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+              android:layout_weight="0.30"
+        />
+
+    <EditText
+        android:text=""
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="0.70"
+
+
+        android:id="@+id/tvPrenom"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Sexe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            android:layout_centerVertical="true" />
+
+        <RadioGroup
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="0.7"
+
+            android:id="@+id/rgSexe">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:id="@+id/Homme"
+                android:button="@null"
+                android:text="Homme"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:id="@+id/Femme"
+                android:button="@null"
+                android:layout_gravity="left"
+                android:text="Femme"/>
+
+            </RadioGroup>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Fonction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            />
+
+        <Spinner
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="0.70"
+
+
+            android:id="@+id/spnFonction"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Commentaire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            />
+
+        <EditText
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="0.70"
+            android:inputType="textMultiLine"
+
+
+            android:id="@+id/etCommentaire"/>
+
+    </LinearLayout>
+
+
+    <Button android:text="Envoyer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/envoyer"/>
+
+
+
+
+
+</LinearLayout>
