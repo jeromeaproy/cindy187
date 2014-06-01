@@ -48,6 +48,11 @@ public String getSexe()
     return sexe.name();
 
 }
+
+    public String getFonction()
+    {
+        return fonction.name();
+    }
     public void setSexe(String sexe)
     {
       this.sexe=  Sexe.valueOf(sexe);

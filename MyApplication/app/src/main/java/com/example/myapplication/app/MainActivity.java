@@ -112,12 +112,13 @@ ArrayAdapter<String> adapteurSpinner=new ArrayAdapter<String>(this,android.R.lay
                     break;
 
                 case 1:
+                    Intent intent=new Intent(getApplicationContext(),com.example.myapplication.app.EnregistrerActivty.class);
+                    intent.putExtra(CLE_LISTE_MEMEBRE,listeMembre);
+                    startActivity(intent);
                     break;
 
                 case 2:
-                    Intent intent=new Intent(getApplicationContext(),com.example.myapplication.app.EnregistrerActivty.class);
-intent.putExtra(CLE_LISTE_MEMEBRE,listeMembre);
-                    startActivity(intent);
+
                     break;
 
                 case 3:
