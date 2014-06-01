@@ -118,6 +118,9 @@ ArrayAdapter<String> adapteurSpinner=new ArrayAdapter<String>(this,android.R.lay
                     break;
 
                 case 2:
+                    Intent intentListerActivity=new Intent(getApplicationContext(),com.example.myapplication.app.ListerActivity.class);
+
+                    startActivity(intentListerActivity);
 
                     break;
 
@@ -182,5 +185,6 @@ ArrayAdapter<String> adapteurSpinner=new ArrayAdapter<String>(this,android.R.lay
         String commentaire=etCommentaire.getText().toString();
         membre.setCommentaire(commentaire);
         listeMembre.add(membre);
+        Toast.makeText(MainActivity.this,"Le membre a été ajouté",Toast.LENGTH_LONG).show();
     }
 }

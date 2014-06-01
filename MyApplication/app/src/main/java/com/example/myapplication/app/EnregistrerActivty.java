@@ -35,6 +35,7 @@ setContentView(R.layout.activity_enregistrer);
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(EnregistrerActivty.this,MainActivity.class);
+                startActivity(intent);
             }
         });
         String temp=null;
@@ -52,7 +53,7 @@ setContentView(R.layout.activity_enregistrer);
 
 
 
-OutputStreamWriter out=new OutputStreamWriter(openFileOutput("membres.tx",0));
+OutputStreamWriter out=new OutputStreamWriter(openFileOutput("membres.txt",0));
 
 
             ArrayList<Membre> membres=getIntent().getParcelableArrayListExtra(MainActivity.CLE_LISTE_MEMEBRE);
