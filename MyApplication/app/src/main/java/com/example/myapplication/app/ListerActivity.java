@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,13 +17,17 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ListerActivity extends Activity {
+    GridView gv;
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_lister);
 Button button=(Button)findViewById(R.id.btnRevenir);
+
    button.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
@@ -29,14 +35,14 @@ Button button=(Button)findViewById(R.id.btnRevenir);
        }
    });
 
-        TextView tv = (TextView) findViewById(R.id.tvListeMembres);
-        listerMembre(tv);
+         gv= (GridView) findViewById(R.id.gvListeMembres);
+        listerMembre();
 
 
     }
 
 
-    public void listerMembre(TextView tv)
+    public void listerMembre()
 
     {String temp=null;
         StringBuffer sb=new StringBuffer();
@@ -51,7 +57,21 @@ Button button=(Button)findViewById(R.id.btnRevenir);
                 sb.append(temp);
 
             }
-            tv.setText(sb);
+
+           String temp2=sb.toString();
+            ArrayList<String> enTete=new ArrayList<String>();
+            enTete.add("Nom");
+            enTete.add("Prénom");
+            enTete.add("Sexe");
+            enTete.add("Fonction");
+            enTete.add("Commentaire");
+            String[] informations=temp2.split(";");
+            enTete.addAll(Arrays.asList(informations));
+        // String[]   informations={"bob","rgoer"};
+            ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,enTete);
+
+gv.setAdapter(adapter);
+
         } catch (Throwable throwable)
 
         {

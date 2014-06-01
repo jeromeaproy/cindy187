@@ -1,6 +1,7 @@
 package com.example.myapplication.app;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -53,7 +54,7 @@ setContentView(R.layout.activity_enregistrer);
 
 
 
-OutputStreamWriter out=new OutputStreamWriter(openFileOutput("membres.txt",0));
+OutputStreamWriter out=new OutputStreamWriter(openFileOutput("membres.txt", Context.MODE_APPEND));
 
 
             ArrayList<Membre> membres=getIntent().getParcelableArrayListExtra(MainActivity.CLE_LISTE_MEMEBRE);
@@ -63,12 +64,12 @@ OutputStreamWriter out=new OutputStreamWriter(openFileOutput("membres.txt",0));
             {
 
                    Membre membre = (Membre) p;
-                   out.write(membre.getNom() + ";");
-                out.write(membre.getPrenom() + ";");
-                out.write(membre.getSexe());
+                   out.append(membre.getNom() + ";");
+                out.append(membre.getPrenom() + ";");
+                out.append(membre.getSexe() + ";");
 
-                out.write(membre.getFonction());
-                out.write(membre.getCommentaire());
+                out.append(membre.getFonction() + ";");
+                out.append(membre.getCommentaire() + ";");
 
 
 
